@@ -91,7 +91,7 @@ select {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 8.6rem;
-  gap: 2.4rem;
+  gap: 4.8rem;
 }
 
 .country_card {

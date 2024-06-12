@@ -1,8 +1,9 @@
 "use-strict";
 
 const countryContainer = document.querySelector(".country_container");
-
+const form = document.querySelector(".form");
 const searchInput = document.getElementById("search");
+const filter = document.getElementById("filter");
 
 const getJSON = async function (url) {
   try {
@@ -17,7 +18,6 @@ const getJSON = async function (url) {
 
 const displayCountryData = async function (url) {
   const data = await getJSON(url);
-  console.log(data);
 
   data.map((data) => {
     const html = `
@@ -40,7 +40,32 @@ const displayCountryData = async function (url) {
 
 displayCountryData("https://restcountries.com/v3/all");
 
-const searchCountry = async function (url, e) {
+const searchCountry = function (e) {
   e.preventDefault();
-  const data = await getJSON(url);
+  const search = searchInput.value;
+
+  if (!search) return;
+
+  const url = `https://restcountries.com/v3/name/${search}`;
+  countryContainer.innerHTML = "";
+  displayCountryData(url);
+  searchInput.value = "";
 };
+
+form.addEventListener("submit", searchCountry);
+
+const filterCountry = function () {
+  const filterValue = filter.value;
+
+  if (!filterValue) return;
+
+  const url =
+    filterValue === "all"
+      ? "https://restcountries.com/v3/all"
+      : `https://restcountries.com/v3/region/${filterValue}`;
+
+  countryContainer.innerHTML = "";
+  displayCountryData(url);
+};
+
+filter.addEventListener("change", filterCountry);
