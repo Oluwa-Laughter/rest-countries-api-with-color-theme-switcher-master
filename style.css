@@ -125,3 +125,126 @@ select {
   font-size: 1.4rem;
   padding: 2.4rem;
 }
+
+/* Basic modal styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.back-button {
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.back-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Country detail styling */
+.country-detail {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.country-flag {
+  width: 300px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.country-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.country-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.country-info p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.country-info p strong {
+  font-weight: 600;
+}
+
+.border-country {
+  display: inline-block;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 14px;
+  margin-right: 5px;
+  color: #333;
+}
+
+.border-country:hover {
+  background-color: #e0e0e0;
+}
+
+/* Dark mode styling */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode .modal-content {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+body.dark-mode .back-button {
+  background-color: #444;
+  color: #f0f0f0;
+}
+
+body.dark-mode .border-country {
+  background-color: #444;
+  color: #f0f0f0;
+}
+
+body.dark-mode .border-country:hover {
+  background-color: #555;
+}
