@@ -4,7 +4,6 @@ const countryContainer = document.querySelector(".country_container");
 const form = document.querySelector(".form");
 const searchInput = document.getElementById("search");
 const filter = document.getElementById("filter");
-
 const getJSON = async function (url) {
   try {
     const response = await fetch(url);

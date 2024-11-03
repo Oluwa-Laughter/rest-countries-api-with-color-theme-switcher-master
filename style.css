@@ -24,7 +24,6 @@ body {
 
 nav {
   background-color: var(--VeryLightGray);
-  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
   height: 7rem;
   display: flex;
   align-items: center;
